@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +11,9 @@
         var url1 = 'http://gtgopher.ddns.net/current?psn=' + psnId;
         var url2 = 'https://dg-edge.com/players/' + psnId;
         window.open(url1, '_blank');
-        window.open(url2, '_blank');
+        setTimeout(function() {
+          window.open(url2, '_blank');
+        }, 500); // 500 milliseconds delay
       } else {
         alert('Please enter your PSN ID.');
       }
