@@ -5,15 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Team RPM</title>
   <script type="text/javascript">
-    function openTabs() {
+    function openGtgopher() {
       var psnId = document.getElementById('psnId').value;
       if (psnId) {
         var url1 = 'http://gtgopher.ddns.net/current?psn=' + psnId;
-        var url2 = 'https://dg-edge.com/players/' + psnId;
         window.open(url1, '_blank');
-        setTimeout(function() {
-          window.open(url2, '_blank');
-        }, 500); // 500 milliseconds delay
+      } else {
+        alert('Please enter your PSN ID.');
+      }
+    }
+
+    function openDgEdge() {
+      var psnId = document.getElementById('psnId').value;
+      if (psnId) {
+        var url2 = 'https://dg-edge.com/players/' + psnId;
+        window.open(url2, '_blank');
       } else {
         alert('Please enter your PSN ID.');
       }
@@ -43,11 +49,11 @@
   <main style="padding: 20px;">
     <!-- Services Section -->
     <section style="margin-bottom: 40px;">
-      <h2 style="text-align: center;">Our Sponsors</h2>
+      <h2 style="text-align: center;">Our Drivers</h2>
       <div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
         <div style="flex: 1 1 30%; background: #f4f4f4; margin: 10px; padding: 20px; text-align: center;">
-          <h3>Real Polimento</h3>
-          <p>www.realpolimento.com</p>
+          <h3>Nitron_108</h3>
+          <p>Nuno Goncalves</p>
         </div>
         <div style="flex: 1 1 30%; background: #f4f4f4; margin: 10px; padding: 20px; text-align: center;">
           <h3>Service Two</h3>
@@ -66,8 +72,8 @@
       <div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
         <div style="flex: 1 1 30%; background: #f4f4f4; margin: 10px; padding: 20px; text-align: center;">
           <img src="team1.jpg" alt="Team Member 1" style="width: 100%; height: auto; border-radius: 50%;">
-          <h3>Nitron_108</h3>
-          <p>Nuno Goncalves</p>
+          <h3>Team Member 1</h3>
+          <p>Role of team member 1.</p>
         </div>
         <div style="flex: 1 1 30%; background: #f4f4f4; margin: 10px; padding: 20px; text-align: center;">
           <img src="team2.jpg" alt="Team Member 2" style="width: 100%; height: auto; border-radius: 50%;">
@@ -85,10 +91,13 @@
     <!-- PSN ID Form -->
     <section style="margin-bottom: 40px;">
       <h2 style="text-align: center;">Enter Your PSN ID</h2>
-      <form onsubmit="openTabs(); return false;" style="text-align: center;">
+      <form style="text-align: center;">
         <label for="psnId" style="display: block; margin-bottom: 10px;">PSN ID:</label>
         <input type="text" id="psnId" name="psnId" style="padding: 10px; width: 100%; max-width: 300px; margin-bottom: 10px;" />
-        <input type="submit" value="Submit" style="padding: 10px 20px; background: #1E90FF; color: #fff; border: none; cursor: pointer;" />
+        <div>
+          <button type="button" onclick="openGtgopher()" style="padding: 10px 20px; background: #1E90FF; color: #fff; border: none; cursor: pointer; margin-right: 10px;">GTGOPHER</button>
+          <button type="button" onclick="openDgEdge()" style="padding: 10px 20px; background: #1E90FF; color: #fff; border: none; cursor: pointer;">DG-EDGE</button>
+        </div>
       </form>
     </section>
   </main>
